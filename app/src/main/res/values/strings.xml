@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MoodTrack</string>
+    <string name="main_screen_title">How do you feel today ?</string>
+    <string name="main_screen_feel_1">Excellent</string>
+    <string name="main_screen_feel_2">Terrible</string>
+    <string name="main_screen_continue">Continue</string>
 </resources>
