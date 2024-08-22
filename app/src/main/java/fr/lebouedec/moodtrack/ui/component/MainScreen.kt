@@ -1,5 +1,6 @@
 package fr.lebouedec.moodtrack.ui.component
 
+import android.app.Activity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -20,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -29,12 +31,13 @@ import androidx.compose.ui.unit.sp
 import fr.lebouedec.moodtrack.R
 import fr.lebouedec.moodtrack.ui.component.slider.Slider
 import fr.lebouedec.moodtrack.ui.theme.MoodTrackTheme
+import kotlin.system.exitProcess
 
 @Composable
 fun MainScreen(innerPadding: PaddingValues) {
     val steps = 10
     var sliderValue by remember { mutableFloatStateOf(8f) }
-
+    val activity = LocalContext.current as Activity
     Column(
         modifier = Modifier
             .padding(bottom = innerPadding.calculateBottomPadding())
@@ -91,7 +94,8 @@ fun MainScreen(innerPadding: PaddingValues) {
                     .padding(horizontal = 20.dp, vertical = 20.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
                 onClick = {
-                    // TODO : Mettre l'explosion
+                    activity.finish()
+                    exitProcess(0)
                 },
             ) {
                 Text(text = stringResource(id = R.string.main_screen_continue))

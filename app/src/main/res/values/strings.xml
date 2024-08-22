@@ -4,4 +4,6 @@
     <string name="main_screen_feel_1">Excellent</string>
     <string name="main_screen_feel_2">Terrible</string>
     <string name="main_screen_continue">Continue</string>
+    <string name="notification_title">How do you feel today ?</string>
+    <string name="notification_content">Wanna show us</string>
 </resources>
